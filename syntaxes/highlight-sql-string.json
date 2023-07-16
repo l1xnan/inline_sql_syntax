@@ -94,42 +94,13 @@
             ]
         },
         {
-            "begin": "(?i)(`)(SELECT |INSERT INTO |DELETE |UPDATE |CREATE TABLE |CREATE INDEX)",
+            "begin": "(?i)(`)(SELECT |INSERT INTO |DELETE |UPDATE |CREATE TABLE |CREATE INDEX |CREATE OR REPLACE )",
             "beginCaptures": {
                 "2": {
                     "name": "keyword.sql"
                 }
             },
             "end": "(`)",
-            "patterns": [
-                {
-                    "include": "source.sql"
-                }
-            ]
-        },
-        {
-            "comment": "Python multi-line strings",
-            "begin": "f?(\"\"\")(--\\s*sql)",
-            "beginCaptures": {
-                "2": {
-                    "name": "comment.sql"
-                }
-            },
-            "end": "(\"\"\")",
-            "patterns": [
-                {
-                    "include": "source.sql"
-                }
-            ]
-        },
-        {
-            "begin": "(?i)(\"\"\")(SELECT |INSERT INTO |DELETE |UPDATE |CREATE TABLE |CREATE INDEX)",
-            "beginCaptures": {
-                "2": {
-                    "name": "keyword.sql"
-                }
-            },
-            "end": "(\"\"\")",
             "patterns": [
                 {
                     "include": "source.sql"

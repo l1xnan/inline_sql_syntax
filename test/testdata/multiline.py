@@ -11,6 +11,16 @@ query_with_db_identifiers = """--sql
 """
 
 some_table = "book"
+
 f_string = f"""--sql
 select * from {some_table}
+"""
+
+query = """
+--sql
+SELECT title FROM book;
+"""
+
+query = """
+SELECT title FROM book;
 """
